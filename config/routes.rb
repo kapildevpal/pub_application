@@ -11,7 +11,7 @@
 Rails.application.routes.draw do
   # Your other routes...
 
-  devise_for :users
+  devise_for :users, controllers: {registrations: "users/registrations"}
 
   # Additional custom routes or resources can be added here...
 
