@@ -1,0 +1,31 @@
+<table class="table caption-top">
+<h1  class="text-danger"><center>List Of Pubs</center></h1>
+  <thead>
+    <tr>
+      <th scope="col">Serial no.</th>
+      <th scope="col">Name</th>
+      <th scope="col">Description</th>
+      <th scope="col">Location</th>
+      <th scope="col">Capacity</th>
+      <th scope="col">Current No. Of People</th>
+      <th scope="col">Smoking Allowed</th>
+      <th scope="col">Average Rating</th>
+      <th scope="col">Show</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @pub_profiles.each_with_index do |pub_profile, index| %>
+      <tr>
+        <th scope="row"><%= index + 1 %></th>
+        <td><%= pub_profile.name %></td>
+        <td><%= pub_profile.description %></td>
+        <td><%= pub_profile.location %></td>
+        <td><%= pub_profile.capacity %></td>
+        <td><%= pub_profile.current_number_of_people %></td>
+        <td><%= pub_profile.is_smoking_allowed ? 'Yes' : 'No' %></td>
+        <td><%= pub_profile.average_rating %></td>
+        <td><%= link_to 'Show', pub_profile_path(pub_profile),class: "btn btn-warning"  %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

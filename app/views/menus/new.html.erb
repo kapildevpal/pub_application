@@ -1,0 +1,26 @@
+<%= form_with model: @menu, local: true do |form| %>
+    <p>
+      <%= form.label :name %><br>
+      <%= form.text_field :name %>
+    </p>
+     
+    <p>
+      <%= form.label :price %><br>
+      <%= form.text_area :price %>
+    </p>
+     
+    <p>
+      <%= form.label :item_type %><br>
+      <%= form.text_field :item_type %>
+    </p>
+
+    <p>
+      <%= form.label :pub_profile_id %><br>
+      <%= form.text_field :pub_profile_id %>
+    </p>
+
+    <p>
+      <%= form.submit %>
+    </p>
+  <% end %>
+  

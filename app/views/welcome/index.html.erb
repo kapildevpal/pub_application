@@ -1,5 +1,20 @@
 <% if user_signed_in? %>
-  <%= button_to 'Sign out', destroy_user_session_path, method: :delete %>
-<% else %>
-  <%= link_to 'Sign in', new_user_session_path %>
+<h1 style="color: #007bff;">Welcome To The Dashboard</h1> 
+<style>body{
+ background-image: url("https://images.pexels.com/photos/2079438/pexels-photo-2079438.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+}
+</style>
+  <%= link_to 'Pubs To Visit', pub_profiles_path, class: 'btn btn-primary mr-2' %>
+  <%= link_to " Your Bookings", bookings_path(@pub_profile), class: 'btn btn-info mr-2' %>
+  <%= button_to 'Sign out', destroy_user_session_path, method: :delete, class: 'btn btn-danger' %>
+<% elsif pub_owner_signed_in? %>
+<h1 style="color: #007bff;">Welcome To The Dashboard</h1>
+
+<style>body{
+ background-image: url("https://images.pexels.com/photos/2079438/pexels-photo-2079438.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+}
+</style>
+  <%= link_to 'New pub profile', new_pub_profile_path, class: 'btn btn-success mr-2' %>
+  <%= link_to "Bookings", bookings_path, class: 'btn btn-info mr-2' %>
+  <%= button_to 'Sign out', destroy_pub_owner_session_path, method: :delete, class: 'btn btn-danger' %>
 <% end %>

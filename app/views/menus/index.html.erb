@@ -1,0 +1,20 @@
+<h1>Listing Menus</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Price</th>
+    <th>Item Type</th>
+    <th>Pub</th>
+    </tr>
+
+  <% @menus.each do |menu| %>
+    <tr>
+      <td><%= menu.name %></td>
+      <td><%= menu.price %></td>
+      <td><%= menu.item_type %></td>
+      <td><%= menu.pub_profile.name %></td>
+      <td><%= link_to 'Show', menu_path(menu) %></td>
+    </tr>
+  <% end %>
+</table>

@@ -1,0 +1,2 @@
+module PubProfilesHelper
+end
