@@ -1,22 +1,31 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>PubManagement</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<html lang="en">
+<head>
+  <title>PubManagement</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
-    <%= javascript_include_tag 'application' %>
+  <!-- Include Bootstrap CSS -->
+  <%= stylesheet_link_tag "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css", "data-turbo-track": "reload" %>
 
-  </head>
+  <%= javascript_importmap_tags %>
+  <%= javascript_include_tag 'application' %>
+</head>
 
-  <body>
-  <p class="notice"><%= notice %></p>
-       <p class="alert"><%= alert %></p>
+<body>
+  <div class="container mt-4">
+    <div class="row">
+      <div class="col">
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
 
+        <%= yield %>
+      </div>
+    </div>
+  </div>
 
-    <%= yield %>
-  </body>
+  <!-- Include Bootstrap JS and Popper.js -->
+  <%= javascript_include_tag "https://code.jquery.com/jquery-3.5.1.slim.min.js", "https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js", "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" %>
+</body>
 </html>

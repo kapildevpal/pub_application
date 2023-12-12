@@ -5,4 +5,6 @@ class User < ApplicationRecord
   enum gender: { male: 0, female: 1, other: 2 }
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+         has_many :bookings
+         has_many :pub_profiles, through: :bookings
 end

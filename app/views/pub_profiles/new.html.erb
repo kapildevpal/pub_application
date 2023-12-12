@@ -1,0 +1,42 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+    <h1> Pub Profile </h1>
+      <%= form_with model: @pub_profile, local: true, html: { class: 'form-edit-pub-profile' } do |form| %>
+        <div class="form-group">
+          <%= form.label :name %><br>
+          <%= form.text_field :name, class: 'form-control' %>
+        </div>
+        
+        <div class="form-group">
+          <%= form.label :description %><br>
+          <%= form.text_area :description, class: 'form-control' %>
+        </div>
+        
+        <div class="form-group">
+          <%= form.label :location %><br>
+          <%= form.text_field :location, class: 'form-control' %>
+        </div>
+      
+        <div class="form-group">
+          <%= form.label :capacity %><br>
+          <%= form.number_field :capacity, class: 'form-control' %>
+        </div>
+      
+        <div class="form-group">
+          <%= form.label :is_smoking_allowed %><br>
+          <%= form.check_box :is_smoking_allowed, class: 'form-check-input' %>
+        </div>
+      
+        <div class="form-group">
+          <%= form.label :average_rating %><br>
+          <%= form.number_field :average_rating, step: 0.01, class: 'form-control' %>
+        </div>
+      
+        <div class="form-group">
+          <%= form.submit "Create Pub Profile", class: 'btn btn-primary btn-block' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
